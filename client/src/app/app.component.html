@@ -1,0 +1,36 @@
+<h1>Games games Games</h1>
+
+<form [formGroup]="gameForm">
+  <table>
+    <tr>
+      <td>Games per page: </td>
+      <td>
+        <select formControlName="limit" (change)="process()">
+          <option value=5>5</option>
+          <option value=10>10</option>
+          <option value=15>15</option>
+          <option value=20>20</option>
+        </select>
+      </td>
+    </tr>
+  </table>
+</form>
+
+<hr>
+
+<table>
+  <thead>
+    <tr>
+      <th>Game Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let name of gameNames">
+      <td>{{ name }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div>
+  <pre> {{ response$ | async | json }} </pre>
+</div>
